@@ -20,22 +20,10 @@
         padding-bottom: 48px;
     }
 
-    &__form {
+    &__button {
         display: flex;
         justify-content: center;
         padding-top: 67px;
-    }
-
-    &__button {
-        width: 246px;
-        height: 50px;
-        background: #7AC100;
-        border-radius: 12px;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 32px;
-        color: #FFFFFF;
-        border: none;
     }
 }
 
@@ -45,6 +33,14 @@
     column-gap: 24px;
 
     .diff-lvl__button {
+        display: flex;
+    }
+
+    .diff-lvl__button input[type=radio] {
+        display: none;
+    }
+
+    .diff-lvl__button label {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -57,5 +53,28 @@
         font-size: 64px;
         line-height: 72px;
         color: #0080C1;
+        user-select: none;
+        cursor: pointer;
     }
+
+    .diff-lvl__button input[type=radio]:checked+label {
+        border: 2px solid #004980;
+    }
+
+    .diff-lvl__button input[type=radio]:disabled+label {
+        border: none;
+    }
+}
+
+.button-start {
+    width: 246px;
+    height: 50px;
+    background: #7AC100;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
 }
