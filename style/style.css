@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "StratosRegular";
+}
+
+body {
+  background: #004980;
+}
+
+a {
+  text-decoration: none;
+}
+
+.difficulty-level {
+  display: flex;
+  justify-content: center;
+  padding-top: 158px;
+}
+
+.content {
+  width: 480px;
+  height: 460px;
+  background: #C2F5FF;
+  border-radius: 12px;
+}
+.content__title {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  color: #004980;
+  padding-top: 52px;
+  padding-bottom: 48px;
+}
+.content__button {
+  display: flex;
+  justify-content: center;
+  padding-top: 67px;
+}
+
+.content__diff-lvl {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+}
+.content__diff-lvl .diff-lvl__button {
+  display: flex;
+}
+.content__diff-lvl .diff-lvl__button input[type=radio] {
+  display: none;
+}
+.content__diff-lvl .diff-lvl__button label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 98px;
+  height: 98px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: none;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  color: #0080C1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.content__diff-lvl .diff-lvl__button input[type=radio]:checked + label {
+  border: 2px solid #004980;
+}
+.content__diff-lvl .diff-lvl__button input[type=radio]:disabled + label {
+  border: none;
+}
+
+.button-start {
+  width: 246px;
+  height: 50px;
+  background: #7AC100;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "StratosRegular";
+  src: url("./fonts/stratosskyengweb-regular.woff2") format("woff2"), url("./fonts/stratosskyengweb-regular.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}/*# sourceMappingURL=style.css.map */

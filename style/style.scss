@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'StratosRegular';
+}
+
+body {
+    background: #004980;
+}
+
+a {
+    text-decoration: none;
+}
+
+@import 'index';
+@import 'fonts'
