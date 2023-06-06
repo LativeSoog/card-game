@@ -8,8 +8,6 @@ const userInfoGame = {
 
 renderDifficultyLevel({ userInfoGame })
 
-selectDifficulty({ userInfoGame })
-
 const startGameButton = document.querySelector(".button-start").addEventListener("click", () => {
     if (!userInfoGame.difficultyLevel) {
         alert("Пожалуйста, выберите сложность")
@@ -17,3 +15,5 @@ const startGameButton = document.querySelector(".button-start").addEventListener
         renderDifficultyLevel({ userInfoGame })
     }
 })
+
+selectDifficulty({ userInfoGame })

@@ -1,6 +1,5 @@
-const selectDifficulty = document.getElementById("diff")
-
 const renderDifficultyLevel = ({ userInfoGame }) => {
+    const selectDifficulty = document.getElementById("diff")
 
 
     if (!userInfoGame.difficultyLevel) {
