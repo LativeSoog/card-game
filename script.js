@@ -18,3 +18,5 @@ const startGameButton = document
     })
 
 selectDifficulty({ userInfoGame })
+
+console.log(startGameButton)

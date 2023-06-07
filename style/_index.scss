@@ -7,7 +7,7 @@
 .content {
     width: 480px;
     height: 460px;
-    background: #C2F5FF;
+    background: #c2f5ff;
     border-radius: 12px;
 
     &__title {
@@ -36,7 +36,7 @@
         display: flex;
     }
 
-    .diff-lvl__button input[type=radio] {
+    .diff-lvl__button input[type='radio'] {
         display: none;
     }
 
@@ -46,22 +46,22 @@
         justify-content: center;
         width: 98px;
         height: 98px;
-        background: #FFFFFF;
+        background: #fff;
         border-radius: 12px;
         border: none;
         font-weight: 400;
         font-size: 64px;
         line-height: 72px;
-        color: #0080C1;
+        color: #0080c1;
         user-select: none;
         cursor: pointer;
     }
 
-    .diff-lvl__button input[type=radio]:checked+label {
+    .diff-lvl__button input[type='radio']:checked + label {
         border: 2px solid #004980;
     }
 
-    .diff-lvl__button input[type=radio]:disabled+label {
+    .diff-lvl__button input[type='radio']:disabled + label {
         border: none;
     }
 }
@@ -69,12 +69,12 @@
 .button-start {
     width: 246px;
     height: 50px;
-    background: #7AC100;
+    background: #7ac100;
     border-radius: 12px;
     font-weight: 400;
     font-size: 24px;
     line-height: 32px;
-    color: #FFFFFF;
+    color: #fff;
     border: none;
     cursor: pointer;
 }
