@@ -1,6 +1,5 @@
-import { renderDifficultyLevel } from "./components/renderDifficultyLevel.js";
-import { selectDifficulty } from "./components/selectDifficultyGame.js";
-
+import { renderDifficultyLevel } from './components/renderDifficultyLevel.js'
+import { selectDifficulty } from './components/selectDifficultyGame.js'
 
 const userInfoGame = {
     difficultyLevel: false,
@@ -8,12 +7,14 @@ const userInfoGame = {
 
 renderDifficultyLevel({ userInfoGame })
 
-const startGameButton = document.querySelector(".button-start").addEventListener("click", () => {
-    if (!userInfoGame.difficultyLevel) {
-        alert("Пожалуйста, выберите сложность")
-    } else {
-        renderDifficultyLevel({ userInfoGame })
-    }
-})
+const startGameButton = document
+    .querySelector('.button-start')
+    .addEventListener('click', () => {
+        if (!userInfoGame.difficultyLevel) {
+            alert('Пожалуйста, выберите сложность')
+        } else {
+            renderDifficultyLevel({ userInfoGame })
+        }
+    })
 
 selectDifficulty({ userInfoGame })
