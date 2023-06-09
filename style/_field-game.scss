@@ -1,0 +1,50 @@
+.field {
+    display: grid;
+    grid-template-columns: repeat(9, 95px);
+    gap: 15px;
+    justify-content: center;
+
+    &__header {
+        grid-column: 1/-1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 41px;
+        padding-bottom: 20px;
+    }
+
+    &__time {
+        display: flex;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 72px;
+        color: #fff;
+    }
+
+    &__time-min {
+        position: relative;
+    }
+    &__time-min::before {
+        content: 'min';
+        position: absolute;
+        top: -18px;
+        left: 38px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+    }
+
+    &__time-sec {
+        position: relative;
+    }
+
+    &__time-sec::before {
+        content: 'sek';
+        position: absolute;
+        top: -18px;
+        left: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+    }
+}

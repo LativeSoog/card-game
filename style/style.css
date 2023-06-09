@@ -21,7 +21,7 @@ a {
 .content {
   width: 480px;
   height: 460px;
-  background: #C2F5FF;
+  background: #c2f5ff;
   border-radius: 12px;
 }
 .content__title {
@@ -57,13 +57,13 @@ a {
   justify-content: center;
   width: 98px;
   height: 98px;
-  background: #FFFFFF;
+  background: #fff;
   border-radius: 12px;
   border: none;
   font-weight: 400;
   font-size: 64px;
   line-height: 72px;
-  color: #0080C1;
+  color: #0080c1;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -79,12 +79,12 @@ a {
 .button-start {
   width: 246px;
   height: 50px;
-  background: #7AC100;
+  background: #7ac100;
   border-radius: 12px;
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #fff;
   border: none;
   cursor: pointer;
 }
@@ -94,4 +94,49 @@ a {
   src: url("./fonts/stratosskyengweb-regular.woff2") format("woff2"), url("./fonts/stratosskyengweb-regular.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+.field {
+  display: grid;
+  grid-template-columns: repeat(9, 95px);
+  gap: 15px;
+  justify-content: center;
+}
+.field__header {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 41px;
+  padding-bottom: 20px;
+}
+.field__time {
+  display: flex;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  color: #fff;
+}
+.field__time-min {
+  position: relative;
+}
+.field__time-min::before {
+  content: "min";
+  position: absolute;
+  top: -18px;
+  left: 38px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+}
+.field__time-sec {
+  position: relative;
+}
+.field__time-sec::before {
+  content: "sek";
+  position: absolute;
+  top: -18px;
+  left: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
 }/*# sourceMappingURL=style.css.map */
