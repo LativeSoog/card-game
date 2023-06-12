@@ -1,3 +1,5 @@
+import { mechanicsGame } from './mechanismGame.js'
+
 const generateCards = ({ userInfoGame, selectDifficulty }) => {
     let arrCards = []
     const getRank = (number) => {
@@ -47,10 +49,10 @@ const generateCards = ({ userInfoGame, selectDifficulty }) => {
             suit = getSuit(Math.floor(Math.random() * 4) + 1)
         } while (
             arrCards.includes(
-                `<div class="field__item"><img src="./img/${rank}-${suit}.jpg" /></div>`
+                `<div class="field__item"><img data-value="${rank}-${suit}" data-value="" src="./img/${rank}-${suit}.jpg" /></div>`
             )
         )
-        let card = `<div class="field__item"><img class="item__image" src="./img/${rank}-${suit}.jpg" /></div>`
+        let card = `<div class="field__item"><img data-value="${rank}-${suit}" data-value="" class="item__image" src="./img/${rank}-${suit}.jpg" /></div>`
         arrCards.push(card)
 
         let index = Math.floor(Math.random() * userInfoGame.quantityOfCards) + 1
@@ -73,6 +75,7 @@ const generateCards = ({ userInfoGame, selectDifficulty }) => {
         for (let card of cards) {
             card.setAttribute('src', './img/card-shirt.jpg')
         }
+        mechanicsGame()
     }, 5000)
 
     selectDifficulty.innerHTML = `
