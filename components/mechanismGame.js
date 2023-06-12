@@ -1,10 +1,8 @@
 let oneOpenCard = {
     value: '',
-    status: null,
 }
 let twoOpenCard = {
     value: '',
-    status: null,
 }
 
 const mechanicsGame = () => {
@@ -18,29 +16,28 @@ const mechanicsGame = () => {
             } else {
                 twoOpenCard.value = card.dataset.value
                 comparisonCard()
-                console.log(card.dataset)
             }
         })
     })
-}
 
-const comparisonCard = () => {
-    if (oneOpenCard.value === twoOpenCard.value) {
-        oneOpenCard.value = ''
-        checkWin()
-    } else {
-        alert('Вы проиграли')
-    }
-}
-
-const checkWin = () => {
-    const cards = document.querySelectorAll('.item__image')
-    for (let card of cards) {
-        if (card.dataset.open !== 'open') {
-            return false
+    const comparisonCard = () => {
+        if (oneOpenCard.value === twoOpenCard.value) {
+            oneOpenCard.value = ''
+            checkWin()
+        } else {
+            alert('Вы проиграли')
         }
     }
-    alert('Вы победили!')
+
+    const checkWin = () => {
+        const cards = document.querySelectorAll('.item__image')
+        for (let card of cards) {
+            if (card.dataset.open !== 'open') {
+                return false
+            }
+        }
+        alert('Вы победили!')
+    }
 }
 
 export { mechanicsGame }

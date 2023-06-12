@@ -1,4 +1,5 @@
 import { mechanicsGame } from './mechanismGame.js'
+import { renderDifficultyLevel } from './renderDifficultyLevel.js'
 
 const generateCards = ({ userInfoGame, selectDifficulty }) => {
     let arrCards = []
@@ -70,14 +71,6 @@ const generateCards = ({ userInfoGame, selectDifficulty }) => {
         }
     }
 
-    setTimeout(() => {
-        const cards = document.querySelectorAll('.item__image')
-        for (let card of cards) {
-            card.setAttribute('src', './img/card-shirt.jpg')
-        }
-        mechanicsGame()
-    }, 5000)
-
     selectDifficulty.innerHTML = `
         <div class="field">
         <div class="field__header">
@@ -90,21 +83,36 @@ const generateCards = ({ userInfoGame, selectDifficulty }) => {
        ${arrCards.map((card) => card).join('')}
     </div>`
 
-    const second = document.querySelector('.field__time-sec')
-    const minute = document.querySelector('.field__time-min')
-
-    setInterval(() => {
-        let sec = ''
-        let min = ''
-        sec = Number(second.innerHTML) + 1
-        if (sec < 60) {
-            second.innerHTML = Number(sec) < 10 ? '0' + sec : sec
-        } else {
-            min = Number(minute.innerHTML) + 1 + '.'
-            minute.innerHTML = Number(min) < 10 ? '0' + min : min
-            second.innerHTML = '00'
+    setTimeout(() => {
+        const cards = document.querySelectorAll('.item__image')
+        for (let card of cards) {
+            card.setAttribute('src', './img/card-shirt.jpg')
         }
-    }, 1000)
+        mechanicsGame()
+        const second = document.querySelector('.field__time-sec')
+        const minute = document.querySelector('.field__time-min')
+
+        setInterval(() => {
+            let sec = ''
+            let min = ''
+            sec = Number(second.innerHTML) + 1
+            if (sec < 60) {
+                second.innerHTML = Number(sec) < 10 ? '0' + sec : sec
+            } else {
+                min = Number(minute.innerHTML) + 1 + '.'
+                minute.innerHTML = Number(min) < 10 ? '0' + min : min
+                second.innerHTML = '00'
+            }
+        }, 1000)
+    }, 5000)
+
+    // eslint-disable-next-line no-unused-vars
+    const newGame = document
+        .getElementById('newGame')
+        .addEventListener('click', () => {
+            userInfoGame.difficultyLevel = false
+            renderDifficultyLevel({ userInfoGame })
+        })
 }
 
 export { generateCards }
