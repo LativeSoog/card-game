@@ -1,4 +1,4 @@
-import { generateCards } from './generateGameCards'
+import { generateCards } from './generateGameCards.js'
 
 const renderDifficultyLevel = ({ userInfoGame }) => {
     const selectDifficulty = document.getElementById('diff')

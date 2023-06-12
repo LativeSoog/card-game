@@ -50,7 +50,7 @@ const generateCards = ({ userInfoGame, selectDifficulty }) => {
                 `<div class="field__item"><img src="./img/${rank}-${suit}.jpg" /></div>`
             )
         )
-        let card = `<div class="field__item"><img src="./img/${rank}-${suit}.jpg" /></div>`
+        let card = `<div class="field__item"><img class="item__image" src="./img/${rank}-${suit}.jpg" /></div>`
         arrCards.push(card)
 
         let index = Math.floor(Math.random() * userInfoGame.quantityOfCards) + 1
@@ -68,17 +68,40 @@ const generateCards = ({ userInfoGame, selectDifficulty }) => {
         }
     }
 
-    return (selectDifficulty.innerHTML = `
+    setTimeout(() => {
+        const cards = document.querySelectorAll('.item__image')
+        for (let card of cards) {
+            card.setAttribute('src', './img/card-shirt.jpg')
+        }
+    }, 5000)
+
+    selectDifficulty.innerHTML = `
         <div class="field">
         <div class="field__header">
             <div class="field__time">
                 <p class="field__time-min">00.</p>
                 <p class="field__time-sec">00</p>
             </div>
-            <button class="button-start">Начать заново</button>
+            <button id="newGame" class="button-start">Начать заново</button>
         </div>
        ${arrCards.map((card) => card).join('')}
-    </div>`)
+    </div>`
+
+    const second = document.querySelector('.field__time-sec')
+    const minute = document.querySelector('.field__time-min')
+
+    setInterval(() => {
+        let sec = ''
+        let min = ''
+        sec = Number(second.innerHTML) + 1
+        if (sec < 60) {
+            second.innerHTML = Number(sec) < 10 ? '0' + sec : sec
+        } else {
+            min = Number(minute.innerHTML) + 1 + '.'
+            minute.innerHTML = Number(min) < 10 ? '0' + min : min
+            second.innerHTML = '00'
+        }
+    }, 1000)
 }
 
 export { generateCards }
