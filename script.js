@@ -4,6 +4,7 @@ import { selectDifficulty } from './components/selectDifficultyGame.js'
 
 const userInfoGame = {
     difficultyLevel: false,
+    quantityOfCards: 0,
 }
 
 renderDifficultyLevel({ userInfoGame })
@@ -21,3 +22,4 @@ const startGameButton = document
 selectDifficulty({ userInfoGame })
 
 console.log(startGameButton)
+console.log(userInfoGame.quantityOfCards)
