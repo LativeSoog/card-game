@@ -1,3 +1,4 @@
+import './style/style.css'
 import { renderDifficultyLevel } from './components/renderDifficultyLevel.js'
 import { selectDifficulty } from './components/selectDifficultyGame.js'
 
