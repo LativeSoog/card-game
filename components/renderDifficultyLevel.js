@@ -1,10 +1,11 @@
 import { generateCards } from './generateGameCards.js'
+import { functionSelectDifficulty } from './selectDifficultyGame.js'
 
 const renderDifficultyLevel = ({ userInfoGame }) => {
     const selectDifficulty = document.getElementById('diff')
 
     if (!userInfoGame.difficultyLevel) {
-        return (selectDifficulty.innerHTML = `
+        selectDifficulty.innerHTML = `
     <div class="content">
      <h1 class="content__title">Выбери<br>сложность</h1>
         <form action="#">
@@ -26,7 +27,19 @@ const renderDifficultyLevel = ({ userInfoGame }) => {
             <button class="button-start">Старт</button>
          </div>
         </form>
-    </div>`)
+    </div>`
+
+        functionSelectDifficulty({ userInfoGame })
+        // eslint-disable-next-line no-unused-vars
+        const startGameButton = document
+            .querySelector('.button-start')
+            .addEventListener('click', () => {
+                if (!userInfoGame.difficultyLevel) {
+                    alert('Пожалуйста, выберите сложность')
+                } else {
+                    renderDifficultyLevel({ userInfoGame })
+                }
+            })
     } else if (userInfoGame.difficultyLevel === '1') {
         generateCards({ userInfoGame, selectDifficulty })
     } else if (userInfoGame.difficultyLevel === '2') {

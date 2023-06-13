@@ -1,4 +1,4 @@
-const selectDifficulty = ({ userInfoGame }) => {
+const functionSelectDifficulty = ({ userInfoGame }) => {
     const difficultyEasy = document.getElementById('diff-easy')
     const difficultyMiddle = document.getElementById('diff-middle')
     const difficultyHard = document.getElementById('diff-hard')
@@ -19,4 +19,4 @@ const selectDifficulty = ({ userInfoGame }) => {
     })
 }
 
-export { selectDifficulty }
+export { functionSelectDifficulty }
