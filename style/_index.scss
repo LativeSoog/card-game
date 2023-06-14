@@ -1,7 +1,6 @@
 .difficulty-level {
     display: flex;
     justify-content: center;
-    padding-top: 158px;
 }
 
 .content {
@@ -9,6 +8,7 @@
     height: 460px;
     background: #c2f5ff;
     border-radius: 12px;
+    margin-top: 158px;
 
     &__title {
         font-weight: 400;
