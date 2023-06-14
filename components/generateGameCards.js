@@ -111,7 +111,7 @@ const generateCards = ({ userInfoGame, selectDifficulty }) => {
         .getElementById('newGame')
         .addEventListener('click', () => {
             userInfoGame.difficultyLevel = false
-            renderDifficultyLevel({ userInfoGame })
+            renderDifficultyLevel()
         })
 }
 

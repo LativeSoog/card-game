@@ -1,3 +1,6 @@
+import { finalGame } from './renderFinalGame.js'
+import { userInfoGame } from './userProfileGame.js'
+
 let oneOpenCard = {
     value: '',
 }
@@ -26,6 +29,8 @@ const mechanicsGame = () => {
             checkWin()
         } else {
             alert('Вы проиграли')
+            userInfoGame
+            finalGame({ userInfoGame })
         }
     }
 

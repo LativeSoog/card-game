@@ -1,7 +1,8 @@
 import { generateCards } from './generateGameCards.js'
 import { functionSelectDifficulty } from './selectDifficultyGame.js'
+import { userInfoGame } from './userProfileGame.js'
 
-const renderDifficultyLevel = ({ userInfoGame }) => {
+const renderDifficultyLevel = () => {
     const selectDifficulty = document.getElementById('diff')
 
     if (!userInfoGame.difficultyLevel) {
