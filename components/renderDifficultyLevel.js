@@ -3,6 +3,8 @@ import { functionSelectDifficulty } from './selectDifficultyGame.js'
 import { userInfoGame } from './userProfileGame.js'
 
 const renderDifficultyLevel = () => {
+    userInfoGame.oneOpenCard.value = ''
+    userInfoGame.twoOpenCard.value = ''
     const selectDifficulty = document.getElementById('diff')
 
     if (!userInfoGame.difficultyLevel) {

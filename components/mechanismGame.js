@@ -1,35 +1,35 @@
 import { finalGame } from './renderFinalGame.js'
 import { userInfoGame } from './userProfileGame.js'
 
-let oneOpenCard = {
-    value: '',
-}
-let twoOpenCard = {
-    value: '',
-}
+// let oneOpenCard = {
+//     value: '',
+// }
+// let twoOpenCard = {
+//     value: '',
+// }
 
-const mechanicsGame = () => {
+const mechanicsGame = ({ minute, second }) => {
     const cards = document.querySelectorAll('.item__image')
     cards.forEach((card) => {
         card.addEventListener('click', () => {
             card.setAttribute('src', `./img/${card.dataset.value}.jpg`)
             card.dataset.open = 'open'
-            if (!oneOpenCard.value) {
-                oneOpenCard.value = card.dataset.value
+            if (!userInfoGame.oneOpenCard.value) {
+                userInfoGame.oneOpenCard.value = card.dataset.value
             } else {
-                twoOpenCard.value = card.dataset.value
+                userInfoGame.twoOpenCard.value = card.dataset.value
                 comparisonCard()
             }
         })
     })
 
     const comparisonCard = () => {
-        if (oneOpenCard.value === twoOpenCard.value) {
-            oneOpenCard.value = ''
+        if (userInfoGame.oneOpenCard.value === userInfoGame.twoOpenCard.value) {
+            userInfoGame.oneOpenCard.value = ''
             checkWin()
         } else {
-            alert('Вы проиграли')
-            userInfoGame
+            userInfoGame.winLastGame = false
+            userInfoGame.timeLastGame = minute.innerHTML + second.innerHTML
             finalGame({ userInfoGame })
         }
     }
@@ -41,7 +41,9 @@ const mechanicsGame = () => {
                 return false
             }
         }
-        alert('Вы победили!')
+        userInfoGame.winLastGame = true
+        userInfoGame.timeLastGame = minute.innerHTML + second.innerHTML
+        finalGame({ userInfoGame })
     }
 }
 

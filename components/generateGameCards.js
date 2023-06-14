@@ -88,13 +88,13 @@ const generateCards = ({ userInfoGame, selectDifficulty }) => {
         for (let card of cards) {
             card.setAttribute('src', './img/card-shirt.jpg')
         }
-        mechanicsGame()
+
         const second = document.querySelector('.field__time-sec')
         const minute = document.querySelector('.field__time-min')
+        let sec = ''
+        let min = ''
 
         setInterval(() => {
-            let sec = ''
-            let min = ''
             sec = Number(second.innerHTML) + 1
             if (sec < 60) {
                 second.innerHTML = Number(sec) < 10 ? '0' + sec : sec
@@ -104,6 +104,7 @@ const generateCards = ({ userInfoGame, selectDifficulty }) => {
                 second.innerHTML = '00'
             }
         }, 1000)
+        mechanicsGame({ minute, second })
     }, 5000)
 
     // eslint-disable-next-line no-unused-vars
