@@ -1,14 +1,14 @@
-import { generateCards } from './generateGameCards.js'
-import { functionSelectDifficulty } from './selectDifficultyGame.js'
-import { userInfoGame } from './userProfileGame.js'
+import { generateCards } from './generateGameCards'
+import { functionSelectDifficulty } from './selectDifficultyGame'
+import { userInfoGame } from './userProfileGame'
 
 const renderDifficultyLevel = () => {
-    userInfoGame.oneOpenCard.value = ''
-    userInfoGame.twoOpenCard.value = ''
+    userInfoGame.oneOpenCard!.value = ''
+    userInfoGame.twoOpenCard!.value = ''
     const selectDifficulty = document.getElementById('diff')
 
     if (!userInfoGame.difficultyLevel) {
-        selectDifficulty.innerHTML = `
+        selectDifficulty!.innerHTML = `
     <div class="content">
      <h1 class="content__title">Выбери<br>сложность</h1>
         <form action="#">
@@ -34,13 +34,13 @@ const renderDifficultyLevel = () => {
 
         functionSelectDifficulty({ userInfoGame })
         // eslint-disable-next-line no-unused-vars
-        const startGameButton = document
-            .querySelector('.button-start')
+        const startGameButton: void = document
+            .querySelector('.button-start')!
             .addEventListener('click', () => {
                 if (!userInfoGame.difficultyLevel) {
                     alert('Пожалуйста, выберите сложность')
                 } else {
-                    renderDifficultyLevel({ userInfoGame })
+                    renderDifficultyLevel()
                 }
             })
     } else if (userInfoGame.difficultyLevel === '1') {

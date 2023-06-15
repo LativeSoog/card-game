@@ -1,7 +1,13 @@
 const functionSelectDifficulty = ({ userInfoGame }) => {
-    const difficultyEasy = document.getElementById('diff-easy')
-    const difficultyMiddle = document.getElementById('diff-middle')
-    const difficultyHard = document.getElementById('diff-hard')
+    const difficultyEasy = document.getElementById(
+        'diff-easy'
+    ) as HTMLInputElement
+    const difficultyMiddle = document.getElementById(
+        'diff-middle'
+    ) as HTMLInputElement
+    const difficultyHard = document.getElementById(
+        'diff-hard'
+    ) as HTMLInputElement
 
     difficultyEasy.addEventListener('click', () => {
         userInfoGame.difficultyLevel = difficultyEasy.value

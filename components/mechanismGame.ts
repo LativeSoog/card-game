@@ -1,5 +1,5 @@
-import { finalGame } from './renderFinalGame.js'
-import { userInfoGame } from './userProfileGame.js'
+import { finalGame } from './renderFinalGame'
+import { userInfoGame } from './userProfileGame'
 
 // let oneOpenCard = {
 //     value: '',
@@ -12,20 +12,23 @@ const mechanicsGame = ({ minute, second }) => {
     const cards = document.querySelectorAll('.item__image')
     cards.forEach((card) => {
         card.addEventListener('click', () => {
-            card.setAttribute('src', `./img/${card.dataset.value}.jpg`)
-            card.dataset.open = 'open'
-            if (!userInfoGame.oneOpenCard.value) {
-                userInfoGame.oneOpenCard.value = card.dataset.value
+            const htmlCard = card as HTMLElement
+            htmlCard.setAttribute('src', `./img/${htmlCard.dataset.value}.jpg`)
+            htmlCard.dataset.open = 'open'
+            if (!userInfoGame?.oneOpenCard?.value) {
+                userInfoGame.oneOpenCard!.value = htmlCard.dataset.value
             } else {
-                userInfoGame.twoOpenCard.value = card.dataset.value
+                userInfoGame.twoOpenCard!.value = htmlCard.dataset.value
                 comparisonCard()
             }
         })
     })
 
     const comparisonCard = () => {
-        if (userInfoGame.oneOpenCard.value === userInfoGame.twoOpenCard.value) {
-            userInfoGame.oneOpenCard.value = ''
+        if (
+            userInfoGame.oneOpenCard?.value === userInfoGame.twoOpenCard?.value
+        ) {
+            userInfoGame.oneOpenCard!.value = ''
             checkWin()
         } else {
             userInfoGame.winLastGame = false
@@ -35,7 +38,9 @@ const mechanicsGame = ({ minute, second }) => {
     }
 
     const checkWin = () => {
-        const cards = document.querySelectorAll('.item__image')
+        const cards: HTMLElement[] = Array.from(
+            document.querySelectorAll('.item__image')
+        )
         for (let card of cards) {
             if (card.dataset.open !== 'open') {
                 return false

@@ -6,7 +6,7 @@ const path = require('path')
 const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
-    entry: './script.js',
+    entry: './script.ts',
     mode: isProduction ? 'production' : 'development',
     module: {
         rules: [

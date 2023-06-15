@@ -1,10 +1,10 @@
-import { renderDifficultyLevel } from './renderDifficultyLevel.js'
+import { renderDifficultyLevel } from './renderDifficultyLevel'
 
 const finalGame = ({ userInfoGame }) => {
     const gameField = document.querySelector('.field')
-    const gameFieldHtml = gameField.innerHTML
+    const gameFieldHtml = gameField!.innerHTML
     if (userInfoGame.winLastGame === false) {
-        gameField.innerHTML =
+        gameField!.innerHTML =
             gameFieldHtml +
             `<section class="final-game">
         <div class="content content__final">
@@ -24,7 +24,7 @@ const finalGame = ({ userInfoGame }) => {
         </div>
     </section>`
     } else if (userInfoGame.winLastGame === true) {
-        gameField.innerHTML =
+        gameField!.innerHTML =
             gameFieldHtml +
             `<section class="final-game">
     <div class="content content__final">
@@ -46,8 +46,8 @@ const finalGame = ({ userInfoGame }) => {
     }
 
     // eslint-disable-next-line no-unused-vars
-    const newGames = document
-        .getElementById('newGames')
+    const newGames: HTMLElement | void = document
+        .getElementById('newGames')!
         .addEventListener('click', () => {
             userInfoGame.difficultyLevel = false
             renderDifficultyLevel()
