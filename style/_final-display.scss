@@ -1,0 +1,47 @@
+.final-game {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    background: rgb(0 72 128 / 90%);
+}
+
+.content__final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+
+    &-image {
+        padding-top: 30px;
+    }
+
+    &-title {
+        padding-top: 4px;
+        padding-bottom: 28px;
+    }
+
+    &-button {
+        padding-top: 40px;
+    }
+}
+
+.content__final-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-text {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        padding-bottom: 10px;
+    }
+
+    &-numbers {
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 72px;
+    }
+}
