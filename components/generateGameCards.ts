@@ -1,47 +1,48 @@
 import { mechanicsGame } from './mechanismGame'
 import { renderDifficultyLevel } from './renderDifficultyLevel'
 
+export const getRank = (number: Number) => {
+    switch (number) {
+        case 6:
+            return '6'
+        case 7:
+            return '7'
+        case 8:
+            return '8'
+        case 9:
+            return '9'
+        case 10:
+            return '10'
+        case 11:
+            return 'jack'
+        case 12:
+            return 'queen'
+        case 13:
+            return 'king'
+        case 14:
+            return 'ace'
+        default:
+            break
+    }
+}
+
+export const getSuit = (number: Number) => {
+    switch (number) {
+        case 1:
+            return 'clubs'
+        case 2:
+            return 'diamonds'
+        case 3:
+            return 'hearts'
+        case 4:
+            return 'spades'
+        default:
+            break
+    }
+}
+
 const generateCards = ({ userInfoGame, selectDifficulty }) => {
     let arrCards: String[] = []
-    const getRank = (number: Number) => {
-        switch (number) {
-            case 6:
-                return '6'
-            case 7:
-                return '7'
-            case 8:
-                return '8'
-            case 9:
-                return '9'
-            case 10:
-                return '10'
-            case 11:
-                return 'jack'
-            case 12:
-                return 'queen'
-            case 13:
-                return 'king'
-            case 14:
-                return 'ace'
-            default:
-                break
-        }
-    }
-
-    const getSuit = (number: Number) => {
-        switch (number) {
-            case 1:
-                return 'clubs'
-            case 2:
-                return 'diamonds'
-            case 3:
-                return 'hearts'
-            case 4:
-                return 'spades'
-            default:
-                break
-        }
-    }
     let rank: number | string | undefined = 0
     let suit: number | string | undefined = ''
     for (let i = 0; i < userInfoGame.quantityOfCards / 2; i++) {
